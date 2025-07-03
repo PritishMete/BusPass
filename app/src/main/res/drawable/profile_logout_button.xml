@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background layer -->
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <gradient android:startColor="#fff"
+                android:endColor="#fff"
+                android:type="linear"/>
+            <corners android:radius="13dp"/>
+        </shape>
+    </item>
+
+    <!-- Icon layer -->
+    <item android:drawable="@drawable/profilelogout" android:gravity="center" android:right="40dp"/>
+</layer-list>

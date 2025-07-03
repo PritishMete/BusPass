@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    android:orientation="vertical"
+    android:padding="40dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+
+    <ImageView
+        android:id="@+id/fullticket"
+        android:layout_width="280dp"
+        android:layout_height="510dp"
+        android:layout_gravity="center"
+        android:background="@drawable/fullticketindiafrontside"
+        android:contentDescription="QR Code"
+        android:elevation="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="17dp"
+        android:fontFamily="@font/golibold"
+        android:text="Time: 10:30 AM"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="17dp"
+        android:fontFamily="@font/golibold"
+        android:text="Date: 2024-12-16"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <TextView
+        android:id="@+id/startStop"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:elevation="17dp"
+        android:fontFamily="@font/golibold"
+        android:text="From: Example Start Stop"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" android:gravity="center_horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.24" /> <TextView
+    android:id="@+id/destinationStop"
+    android:layout_width="0dp" android:layout_height="wrap_content" android:elevation="17dp"
+    android:fontFamily="@font/golibold"
+    android:text="To: Example Destination Stop"
+    android:textColor="@android:color/white"
+    android:textSize="14sp" android:gravity="center_horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    app:layout_constraintTop_toBottomOf="@+id/startStop"
+    app:layout_constraintStart_toStartOf="@+id/startStop"
+    app:layout_constraintEnd_toEndOf="@+id/startStop"
+    android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="17dp"
+        android:fontFamily="@font/golibold"
+        android:text="Route: Example Route"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toBottomOf="@+id/destinationStop"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+    android:id="@+id/price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="17dp"
+    android:fontFamily="@font/golibold"
+    android:text="Ticket Price: $10"
+    android:textColor="@android:color/white"
+    android:textSize="12sp"
+    app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+    app:layout_constraintEnd_toEndOf="@+id/fullticket"
+    app:layout_constraintStart_toStartOf="@+id/fullticket"
+    app:layout_constraintTop_toBottomOf="@+id/route" app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+    android:id="@+id/transactionID"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="17dp"
+    android:fontFamily="@font/golibold"
+    android:text="Transaction ID: 12345"
+    android:textColor="@android:color/white"
+    android:textSize="15sp"
+    app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+    app:layout_constraintEnd_toEndOf="@+id/fullticket"
+    app:layout_constraintStart_toStartOf="@+id/fullticket"
+    app:layout_constraintTop_toTopOf="@+id/fullticket"
+    app:layout_constraintVertical_bias="0.05" />
+
+
+    <TextView
+        android:id="@+id/bookedFor"
+        android:layout_width="24dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/flipticket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <ImageView
+        android:id="@+id/flipticket"
+        android:layout_width="158dp"
+        android:layout_height="157dp"
+        android:layout_gravity="center"
+        android:background="@drawable/presstoflip2"
+        android:contentDescription="QR Code"
+        android:elevation="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/presstoflip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <TextView
+        android:id="@+id/presstoflip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="17dp"
+        android:fontFamily="@font/etude_noire_medium"
+        android:text="PRESS TO FLIP"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.932" />
+
+    <TextView
+        android:id="@+id/watermarkTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scanned at 2024-12-24 10:30 AM"
+        android:textColor="#80FF0000"
+        android:textSize="16sp"
+        android:background="#50FFFFFF"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" tools:ignore="MissingConstraints"/> </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,4 @@
+<style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Set the background to transparent -->
+    <item name="android:windowBackground">@drawable/transparent</item>
+</style>

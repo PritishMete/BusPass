@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/startScanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start QR Scan" />
+
+    <TextView
+        android:id="@+id/scanResultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="Scan result will appear here"
+        android:textSize="16sp" />
+
+</LinearLayout>

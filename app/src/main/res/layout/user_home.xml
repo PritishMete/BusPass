@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/bus_icon_header"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Bus Icon"
+            android:src="@drawable/ic_bus_ticket_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/SmartBusHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/golibold"
+            android:lineSpacingMultiplier="0.9"
+            android:text="BUS\nTICKET"
+            android:textColor="@color/user_home_header_text_color"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/bus_icon_header"
+            app:layout_constraintStart_toEndOf="@id/bus_icon_header"
+            app:layout_constraintTop_toTopOf="@id/bus_icon_header" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/quickBookingButton"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/user_home_rounded_blue_button_ripple_bg"
+            android:drawableEnd="@drawable/ic_quick_booking"
+            android:drawablePadding="8dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/leaguespartan"
+            android:gravity="center_vertical|start"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:text="MY RIDE"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bus_icon_header" />
+
+        <Button
+            android:id="@+id/normalBookingButton"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/user_home_rounded_blue_button_ripple_bg"
+            android:drawableEnd="@drawable/hourglass_sand_timer"
+            android:drawablePadding="8dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/leaguespartan"
+            android:gravity="center_vertical|start"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:text="GIFT\n a RIDE"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical_center"
+            app:layout_constraintTop_toTopOf="@id/quickBookingButton" />
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/show_ticket_card"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            app:cardBackgroundColor="@color/user_home_card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="3dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/drawable_card_custom_blue_ripple"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quickBookingButton">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/showticket_icon_img"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_show_ticket"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/user_home_button_blue_gradient_end" />
+
+                <TextView
+                    android:id="@+id/walletBalanceText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/imprima"
+                    android:gravity="center_vertical|start"
+                    android:lineSpacingMultiplier="0.9"
+                    android:text="Show\nTicket"
+                    android:textColor="@color/user_home_white_card_text_color"
+                    android:textSize="13sp"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeMaxTextSize="13sp"
+                    app:autoSizeStepGranularity="1sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/showticket_icon_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/showticket_icon_img"
+                    app:layout_constraintTop_toTopOf="@id/showticket_icon_img" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/booking_history_card"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/drawable_card_custom_blue_ripple"
+            app:cardBackgroundColor="@color/user_home_card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical_center"
+            app:layout_constraintTop_toTopOf="@id/show_ticket_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/bookingHistory_icon_img"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_booking_history"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/user_home_button_blue_gradient_end" />
+
+                <TextView
+                    android:id="@+id/walletBalanceText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/imprima"
+                    android:gravity="center_vertical|start"
+                    android:lineSpacingMultiplier="0.9"
+                    android:text="Booking\nHistory"
+                    android:textColor="@color/user_home_white_card_text_color"
+                    android:textSize="13sp"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeMaxTextSize="13sp"
+                    app:autoSizeStepGranularity="1sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bookingHistory_icon_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/bookingHistory_icon_img"
+                    app:layout_constraintTop_toTopOf="@id/bookingHistory_icon_img" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/emergencyButton"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/drawable_card_custom_blue_ripple"
+            app:cardBackgroundColor="@color/user_home_card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/show_ticket_card"
+            app:layout_constraintStart_toStartOf="@+id/show_ticket_card"
+            app:layout_constraintTop_toTopOf="@+id/savedroute">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/emergencyButton_icon"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_emergency_alert"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/emergencyButton_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/imprima"
+                    android:gravity="center_vertical|start"
+                    android:lineSpacingMultiplier="0.9"
+                    android:text="Emergency"
+                    android:textColor="@color/redd"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="13sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintBottom_toBottomOf="@id/emergencyButton_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/emergencyButton_icon"
+                    app:layout_constraintTop_toTopOf="@id/emergencyButton_icon" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/savedroute"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/drawable_card_custom_blue_ripple"
+            app:cardBackgroundColor="@color/user_home_card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical_center"
+            app:layout_constraintTop_toBottomOf="@+id/booking_history_card"
+            app:layout_constraintVertical_bias="0.033">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/transaction_coin_icon_img"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_saved_routes"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/user_home_button_blue_gradient_end" />
+
+                <TextView
+                    android:id="@+id/walletBalanceText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/imprima"
+                    android:gravity="center_vertical|start"
+                    android:lineSpacingMultiplier="0.9"
+                    android:text="Saved\nRoutes"
+                    android:textColor="@color/user_home_white_card_text_color"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="13sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintBottom_toBottomOf="@id/transaction_coin_icon_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/transaction_coin_icon_img"
+                    app:layout_constraintTop_toTopOf="@id/transaction_coin_icon_img" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/phone_number_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/leaguespartan"
+            android:text="Phone Number: Not available"
+            android:textColor="@color/user_home_phone_text_color"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:autoSizeMaxTextSize="15sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/buslocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savedroute"
+            app:layout_constraintVertical_bias="0.3"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/buslocation"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/user_home_rounded_pill_blue_button_ripple_bg"
+            android:drawableEnd="@drawable/ic_bus_location"
+            android:drawablePadding="10dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/leaguespartan"
+            android:gravity="center_vertical|start"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="BUS LOCATION"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="15sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_number_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

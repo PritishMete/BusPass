@@ -1,0 +1,147 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.pritish.smartbuss'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pritish.smartbuss"
+        minSdk 29
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+
+        multiDexEnabled = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.firebase.database
+    implementation libs.fragment
+    implementation libs.recyclerview
+    implementation libs.androidx.preference
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation libs.firebase.auth
+    implementation libs.firebase.database.v2003
+    implementation libs.play.services.location
+    implementation libs.places
+    implementation libs.okhttp
+    implementation libs.material.v140
+    implementation libs.navigation.fragment.ktx
+    implementation libs.navigation.ui.ktx
+    implementation libs.zxing.android.embedded
+    implementation libs.core
+    implementation libs.recyclerview.v130
+    implementation libs.cardview
+    implementation libs.core.v350
+    implementation libs.core.v351
+    implementation libs.zxing.android.embedded
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
+
+    implementation libs.lottie
+    implementation libs.neumorphism
+    //noinspection UseTomlInstead
+    implementation 'org.osmdroid:osmdroid-android:6.1.14'
+    implementation libs.okhttp.v4100
+    implementation libs.osmdroid.osmdroid.android
+    //implementation libs.slf4j.simple
+
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    implementation libs.play.services.location
+    implementation libs.dangiashish.google.direction.api
+
+
+
+
+    implementation libs.constraintlayout.v220
+    implementation libs.androidx.multidex
+
+    implementation libs.foysalofficial.nafisbottomnav
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
+
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+    implementation 'com.wajahatkarim:EasyFlipView:3.0.3'
+
+
+    implementation 'nl.joery.animatedbottombar:library:1.1.0'
+    implementation 'com.google.android.material:material:1.11.0' // Use the latest version
+
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
+
+    implementation libs.lottie
+    implementation libs.neumorphism
+    //noinspection UseTomlInstead
+    implementation 'org.osmdroid:osmdroid-android:6.1.14'
+    implementation libs.okhttp.v4100
+    implementation libs.osmdroid.osmdroid.android
+    //implementation libs.slf4j.simple
+
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    implementation libs.play.services.location
+    implementation libs.dangiashish.google.direction.api
+
+
+
+
+    implementation libs.constraintlayout.v220
+    implementation libs.androidx.multidex
+
+    implementation libs.foysalofficial.nafisbottomnav
+    implementation libs.jetbrains.kotlin.stdlib.jdk7
+
+
+    implementation libs.animatedbottombar.library
+    implementation libs.google.material.v1110 // Use the latest version
+
+
+    implementation 'com.razorpay:checkout:1.6.21' // Use the latest version
+    implementation 'com.google.firebase:firebase-auth:21.0.5'
+
+
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+
+    implementation 'androidx.core:core:1.12.0' // For notifications
+
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    implementation 'com.vanniktech:android-image-cropper:4.5.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.google.android.material:material:1.6.0'
+
+}

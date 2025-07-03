@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Wallet Balance TextView (Updated position) -->
+        <TextView
+            android:id="@+id/walletBalanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Wallet Balance: ₹0.00"
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-medium"
+            android:padding="8dp"
+            android:text="Select a Payment Method"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="16dp"
+            android:background="#CCCCCC" />
+
+        <!-- Google Pay Button -->
+        <Button
+            android:id="@+id/btnGooglePay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#4285F4"
+            android:text="Pay with Google Pay"
+            android:textColor="#FFFFFF" />
+
+        <!-- Amazon Pay Button -->
+        <Button
+            android:id="@+id/btnAmazonPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#FF9900"
+            android:text="Pay with Amazon Pay"
+            android:textColor="#FFFFFF" />
+
+        <!-- Paytm Button -->
+        <Button
+            android:id="@+id/btnPaytm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#1C9DEA"
+            android:text="Pay with Paytm"
+            android:textColor="#FFFFFF" />
+
+        <!-- PhonePe Button -->
+        <Button
+            android:id="@+id/btnPhonePe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#5E35B1"
+            android:text="Pay with PhonePe"
+            android:textColor="#FFFFFF" />
+
+        <!-- Wallet Button -->
+        <Button
+            android:id="@+id/btnWallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#F57F17"
+            android:text="Pay with Wallet"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/upiIdInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter UPI ID (e.g., 9876543210@ibl)"
+            android:inputType="text"
+            android:layout_marginVertical="8dp" />
+
+        <Button
+            android:id="@+id/btnVerifyUpi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify UPI ID"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnSendToUpi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Money to UPI"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:gravity="bottom"
+    android:padding="15dp"
+    android:background="@drawable/roadbkg"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:layout_width="182dp"
+        android:layout_height="113dp"
+        android:gravity="center"
+        android:src="@drawable/logo_back" />
+
+    <TextView
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="BusPass"
+        android:textColor="@color/lavender"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="318dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:text="contact@buspasservice.com"
+        android:textColor="@color/lavender"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+</LinearLayout>

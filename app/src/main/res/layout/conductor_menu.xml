@@ -1,0 +1,43 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Main Fragment Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/frame_layout" />
+
+        <!-- Bottom Navigation View -->
+
+
+
+        <nl.joery.animatedbottombar.AnimatedBottomBar
+            android:id="@+id/animatedBottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:abb_selectedIndex="0"
+            app:abb_textAppearance="@style/Custombartext"
+            app:abb_tabColorDisabled="#868686"
+            app:abb_tabColorSelected="@color/master_blue"
+            app:abb_rippleEnabled="true"
+            app:abb_indicatorColor="@color/master_blue"
+            app:abb_tabs="@menu/bottom_menu_conductor"
+            android:background="@color/white" />
+
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

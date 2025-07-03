@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer with custom offsets -->
+    <item android:left="10dp" android:top="5dp" android:right="0dp" android:bottom="90dp"> <!-- Custom shadow offsets -->
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Shadow color -->
+            <corners android:radius="30dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+
+    <!-- Main container layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" /> <!-- Background color -->
+            <corners android:radius="30dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+</layer-list>

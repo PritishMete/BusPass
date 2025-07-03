@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- White background -->
+            <solid android:color="@color/home_btn_pad" />
+            <!-- Stroke with color from colors.xml -->
+            <stroke
+                android:width="0.7dp"
+                android:color="@color/home_border" />
+            <!-- Rounded corners -->
+            <corners
+                android:radius="10dp" />
+        </shape>
+    </item>
+
+    <!-- Icon layer -->
+    <item
+        android:drawable="@drawable/money_bag_2"
+        android:gravity="center" android:right="280dp"/>
+</layer-list>

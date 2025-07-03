@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    android:orientation="vertical"
+    android:padding="40dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/showthis"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:elevation="18dp"
+        android:fontFamily="@font/golibold"
+        android:gravity="center"
+        android:text="Show the QR code to \nthe Conductor"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <TextView
+        android:id="@+id/happyjourney"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:elevation="18dp"
+        android:fontFamily="@font/monsieurladoulaise_regular"
+        android:gravity="center"
+        android:text="Happy\nJourney"
+        android:textColor="@color/white"
+        android:textFontWeight="600"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <ImageView
+        android:id="@+id/fullticket"
+        android:layout_width="280dp"
+        android:layout_height="510dp"
+        android:layout_gravity="center"
+        android:background="@drawable/fullticketindiabackside"
+        android:contentDescription="QR Code"
+        android:elevation="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+
+    <ImageView
+        android:id="@+id/qrImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:contentDescription="QR Code"
+        android:elevation="17dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.954" />
+
+    <TextView
+        android:id="@+id/scannedInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="18dp"
+        android:fontFamily="@font/golibold"
+        android:gravity="center"
+        android:text="Scanned Info:\nAt: 2024-06-07 10:00:00\nBus: 1234\nRoute: A-B"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/fullticket"
+        app:layout_constraintEnd_toEndOf="@+id/fullticket"
+        app:layout_constraintStart_toStartOf="@+id/fullticket"
+        app:layout_constraintTop_toTopOf="@+id/fullticket"
+        app:layout_constraintVertical_bias="0.65" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

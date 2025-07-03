@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/walletBalanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wallet Balance: ₹0.0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp" />
+
+        <Button
+            android:id="@+id/gpayButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay via Google Pay" />
+
+        <Button
+            android:id="@+id/AmazonPayButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay via Amazon Pay"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/paytmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay via Paytm"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/phonepeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay via PhonePe"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/vpaInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter UPI ID"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnVPARecharge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recharge via UPI ID"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnReverseRecharge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reverse Recharge to UPI ID"
+            android:layout_marginTop="8dp" />
+        <Button
+            android:id="@+id/debitCardButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay with Debit Card" />
+        <Button
+            android:id="@+id/chooseUPIApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Choose UPI App" />
+    </LinearLayout>
+</ScrollView>

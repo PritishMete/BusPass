@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.SmartBuss" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorSecondary">@color/secondary_color</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColorHighlight">@color/cursor_highlight_color</item>
+
+
+        <item name="colorAccent">@color/your_accent_color</item>
+
+
+    </style>
+
+    <!-- Application theme -->
+    <style name="Theme.SmartBuss" parent="Base.Theme.SmartBuss" />
+
+
+
+
+</resources>
+
+
