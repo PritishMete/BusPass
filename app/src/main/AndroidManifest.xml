@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- Add these new permissions for background service and newer Android versions -->
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -24,25 +23,17 @@
     <!-- For Android 9+ background restrictions -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-
     <queries>
         <package android:name="com.google.android.apps.nbu.paisa.user" />
         <package android:name="com.phonepe.app" />
@@ -110,33 +101,33 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
             android:label="Splash Screen"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".HelpActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
             android:label="Splash Screen"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".ReferralActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
             android:label="Splash Screen"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".IssueActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
             android:label="Splash Screen"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".conductor_map"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
             android:label="Splash Screen"
-            android:exported="true" />
+            android:exported="false" />
 
 
         <activity
@@ -188,13 +179,6 @@
 
         <activity android:name=".PassengerListActivity" android:screenOrientation="portrait" android:exported="false" />
         <activity android:name=".QRScannerActivity" android:screenOrientation="portrait" android:exported="false" />
-        <activity android:name=".BookingActivity" android:screenOrientation="portrait" android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".BookingActivity_others" android:screenOrientation="portrait" android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustResize"/>
-
         <activity android:name=".razorpaypayment" android:screenOrientation="portrait" android:exported="false" />
         <activity android:name=".conductor_current_booking" android:screenOrientation="portrait" android:exported="false" />
 

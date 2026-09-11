@@ -13,3 +13,17 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Local Android/Firebase configuration and generated output
+google-services.json
+firebase-debug*.log
+.firebase/
+app/build/
+*/build/
+
+# Signing material and local secrets
+*.jks
+*.keystore
+*.p12
+*.pem
+*.env
