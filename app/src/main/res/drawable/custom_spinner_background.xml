@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/twelfthline"/> <!-- Updated background color -->
-    <corners android:radius="40dp"/> <!-- Rounded corners -->
-    <elevation android:value="4dp"/> <!-- Shadow effect for the spinner -->
-
-</shape>

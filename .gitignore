@@ -1,29 +1,36 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local
+
+# Sensitive credentials
+service-account*.json
+*-firebase-adminsdk-*.json
+*serviceAccount*.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
-# Local Android/Firebase configuration and generated output
-google-services.json
-firebase-debug*.log
-.firebase/
-app/build/
-*/build/
-
-# Signing material and local secrets
-*.jks
-*.keystore
-*.p12
-*.pem
-*.env
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

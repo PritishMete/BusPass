@@ -1,6 +1,6 @@
 # BusPass Admin Panel
 
-The `admin` branch documents and hosts the administrative side of the BusPass platform.
+The `admin` branch is the administrative side of the BusPass platform.
 
 > **Live Admin Panel:** https://buspassadmin.web.app/
 >
@@ -10,27 +10,29 @@ The `admin` branch documents and hosts the administrative side of the BusPass pl
 
 ## Overview
 
-The BusPass Admin Panel is the operational web interface for managing and monitoring the BusPass public-transport ecosystem. It complements the Android passenger/conductor application on the `main` branch and works with shared Firebase-backed application data.
+BusPass combines a native Android application for passengers and conductors with a web-based administrative panel for operational management and monitoring.
+
+The admin panel is built with React/Vite and Firebase-backed application data.
 
 ## Admin Capabilities
 
-Based on the current administrative project, the panel includes functionality for:
+The current administrative implementation includes:
 
 - Administrator authentication
 - Dashboard and operational statistics
-- Bus creation and assignment workflows
+- Bus creation and assignment
 - Route management
 - Bus/live-location monitoring
 - NFC assignment
-- Pending report review and report history
+- Pending reports and report history
 - Administrative messaging
 - Settings and password management
 
 ## Live Deployment
 
-The admin interface is deployed with Firebase Hosting:
-
 **https://buspassadmin.web.app/**
+
+The public admin frontend is deployed with Firebase Hosting.
 
 ## Technology Stack
 
@@ -39,12 +41,12 @@ The admin interface is deployed with Firebase Hosting:
 - React Router
 - Material UI
 - Emotion
-- Firebase Authentication / Firebase services
+- Firebase Authentication / Realtime Database integration
 - Framer Motion
 - Lucide React
 - date-fns
 
-## Relationship to the Android App
+## Platform Architecture
 
 ```text
                     BUSPASS PLATFORM
@@ -60,26 +62,24 @@ The admin interface is deployed with Firebase Hosting:
                 Firebase / Shared Data
 ```
 
-The Android app handles passenger and conductor journeys, while the admin interface handles operational management and monitoring.
-
-## Branch Structure
+## Repository Branches
 
 | Branch | Purpose |
 | --- | --- |
-| [`main`](https://github.com/PritishMete/BusPass/tree/main) | Native Android passenger + conductor application |
+| [`main`](https://github.com/PritishMete/BusPass/tree/main) | Android passenger + conductor application |
 | [`admin`](https://github.com/PritishMete/BusPass/tree/admin) | Administrative web panel |
 
-To switch locally:
+## Admin Source
 
-```bash
-git checkout admin
-```
+The current admin implementation was supplied from:
 
-## Admin Development
+https://github.com/priyanka352/BUS-ADMIN
 
-The current admin implementation is a React/Vite project.
+See [`ADMIN_SOURCE.md`](ADMIN_SOURCE.md) for the migration/security note.
 
-Typical local workflow:
+## Local Admin Development
+
+For the React/Vite admin project:
 
 ```bash
 npm install
@@ -92,27 +92,23 @@ Production build:
 npm run build
 ```
 
-Preview the production build locally:
+Firebase Hosting configuration should target the same BusPass Firebase project used by the live admin deployment.
 
-```bash
-npm run preview
-```
+## Environment Configuration
 
-## Firebase Hosting
+Do not hardcode production secrets or unrestricted API keys in source code.
 
-The live administrative application is available at:
+Use local environment variables for values such as:
 
 ```text
-https://buspassadmin.web.app/
+VITE_GOOGLE_MAPS_API_KEY=
 ```
 
-Deployment requires access to the correct Firebase project and authenticated Firebase CLI configuration.
+A template is provided in `.env.example`.
 
 ## Security
 
-Administrative systems require stricter credential handling than client applications.
-
-Never commit any of the following:
+Never commit:
 
 ```text
 .env
@@ -124,24 +120,10 @@ admin passwords
 API secrets
 ```
 
-Firebase Admin SDK service-account credentials must be stored only in a secure secret-management environment and should never be shipped to a browser-based React application.
+Firebase Admin SDK credentials belong only in trusted server-side environments or secret managers. They must never be shipped to a React browser bundle.
 
-> **Important:** the provided upstream admin repository currently contains a Firebase Admin SDK service-account JSON file in its public history. That key should be revoked/rotated in Google Cloud/Firebase before the project is treated as secure. It has intentionally not been copied into this repository documentation.
-
-## Source Origin
-
-The administrative implementation was supplied from:
-
-https://github.com/priyanka352/BUS-ADMIN
-
-This repository's `admin` branch is the BusPass-side home for the administrative project and should be used for future admin-specific work.
-
-## App Repository
-
-For passenger/conductor Android development, use:
-
-https://github.com/PritishMete/BusPass/tree/main
+> **Security notice:** the provided upstream repository contains a Firebase Admin SDK service-account JSON file in its public history and a hardcoded Google Maps API key. Those credentials have intentionally not been copied here. The exposed credentials should be revoked/rotated before further production use.
 
 ---
 
-**BusPass Admin** provides the operational layer behind the mobile experience—connecting route, vehicle, report and journey administration with the wider BusPass platform.
+**BusPass Admin** is the operational layer of the BusPass ecosystem, supporting route, vehicle, report and journey administration alongside the Android passenger/conductor experience.
