@@ -1,49 +1,147 @@
-# BusPass
+# BusPass Admin Panel
 
-BusPass is an Android public-transport companion app for passengers and conductors. It combines route discovery, journey booking, digital tickets, wallet recharge and passbook history with conductor-side passenger and live-location workflows.
+The `admin` branch documents and hosts the administrative side of the BusPass platform.
 
-## Product Scope
+> **Live Admin Panel:** https://buspassadmin.web.app/
+>
+> **Android App:** [`main` branch](https://github.com/PritishMete/BusPass/tree/main)
+>
+> **Admin source reference:** https://github.com/priyanka352/BUS-ADMIN
 
-- Passenger sign-in, registration, profile and saved routes
-- Route and nearest-stop discovery with map support
-- Normal and group/other-passenger booking flows
-- QR ticket display and conductor-side validation
-- Wallet balance, recharge and passbook history
-- Emergency notifications, issue reporting and referrals
-- Conductor route setup, live location and passenger list views
-- Optional SMS ticket fallback and UPI app hand-off
+## Overview
 
-## Technology
+The BusPass Admin Panel is the operational web interface for managing and monitoring the BusPass public-transport ecosystem. It complements the Android passenger/conductor application on the `main` branch and works with shared Firebase-backed application data.
 
-- Java Android application, namespace `com.pritish.smartbuss`
-- Android Gradle Plugin 8.10.1, compile SDK 34, minimum SDK 29
-- Firebase Authentication and Realtime Database
-- Google Maps/Places/Location, OSMDroid and route helpers
-- Retrofit/OkHttp, ZXing/JourneyApps QR scanning, Razorpay Checkout
-- Lottie, Material components, MPAndroidChart and supporting UI libraries
+## Admin Capabilities
 
-## Local Setup
+Based on the current administrative project, the panel includes functionality for:
 
-1. Install Android Studio and a JDK supported by the installed Android Gradle Plugin.
-2. Obtain the project Firebase configuration from the project owner and place it at `app/google-services.json`. This file is intentionally ignored by Git.
-3. Add valid Google Maps/Places configuration through the Android resource/local release process. Do not commit API keys.
-4. Open the project in Android Studio or run `gradlew.bat :app:assembleDebug` from the repository root.
+- Administrator authentication
+- Dashboard and operational statistics
+- Bus creation and assignment workflows
+- Route management
+- Bus/live-location monitoring
+- NFC assignment
+- Pending report review and report history
+- Administrative messaging
+- Settings and password management
 
-## Verification
+## Live Deployment
 
-The repository CI workflow runs:
+The admin interface is deployed with Firebase Hosting:
+
+**https://buspassadmin.web.app/**
+
+## Technology Stack
+
+- React 19
+- Vite
+- React Router
+- Material UI
+- Emotion
+- Firebase Authentication / Firebase services
+- Framer Motion
+- Lucide React
+- date-fns
+
+## Relationship to the Android App
 
 ```text
-gradlew.bat clean test lint assembleDebug
+                    BUSPASS PLATFORM
+                           │
+          ┌────────────────┴────────────────┐
+          │                                 │
+          ▼                                 ▼
+   Android Application                 Admin Panel
+ Passenger + Conductor                Web Operations
+          │                                 │
+          └───────────────┬─────────────────┘
+                          ▼
+                Firebase / Shared Data
 ```
 
-CI requires the `GOOGLE_SERVICES_JSON_B64` secret. Payment, Firebase and map integrations also require valid project-side configuration and cannot be verified by an offline unit test alone.
+The Android app handles passenger and conductor journeys, while the admin interface handles operational management and monitoring.
 
-## Security Notes
+## Branch Structure
 
-- Firebase Realtime Database rules are an operational requirement and are not included in this client repository.
-- Razorpay payment verification must happen on a trusted server before treating a recharge as final.
-- The current phone-validation client points at an HTTP endpoint; production deployments should migrate that service to HTTPS.
-- Release builds should use restricted Google API keys, Play App Signing, and a backend-mediated payment flow.
+| Branch | Purpose |
+| --- | --- |
+| [`main`](https://github.com/PritishMete/BusPass/tree/main) | Native Android passenger + conductor application |
+| [`admin`](https://github.com/PritishMete/BusPass/tree/admin) | Administrative web panel |
 
-See [docs/PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md) for a concise project brief and [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md) for showcase-ready detail.
+To switch locally:
+
+```bash
+git checkout admin
+```
+
+## Admin Development
+
+The current admin implementation is a React/Vite project.
+
+Typical local workflow:
+
+```bash
+npm install
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Firebase Hosting
+
+The live administrative application is available at:
+
+```text
+https://buspassadmin.web.app/
+```
+
+Deployment requires access to the correct Firebase project and authenticated Firebase CLI configuration.
+
+## Security
+
+Administrative systems require stricter credential handling than client applications.
+
+Never commit any of the following:
+
+```text
+.env
+.env.*
+service-account*.json
+*-firebase-adminsdk-*.json
+private keys
+admin passwords
+API secrets
+```
+
+Firebase Admin SDK service-account credentials must be stored only in a secure secret-management environment and should never be shipped to a browser-based React application.
+
+> **Important:** the provided upstream admin repository currently contains a Firebase Admin SDK service-account JSON file in its public history. That key should be revoked/rotated in Google Cloud/Firebase before the project is treated as secure. It has intentionally not been copied into this repository documentation.
+
+## Source Origin
+
+The administrative implementation was supplied from:
+
+https://github.com/priyanka352/BUS-ADMIN
+
+This repository's `admin` branch is the BusPass-side home for the administrative project and should be used for future admin-specific work.
+
+## App Repository
+
+For passenger/conductor Android development, use:
+
+https://github.com/PritishMete/BusPass/tree/main
+
+---
+
+**BusPass Admin** provides the operational layer behind the mobile experience—connecting route, vehicle, report and journey administration with the wider BusPass platform.
