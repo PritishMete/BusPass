@@ -1,49 +1,140 @@
-# BusPass
+# BusPass — Smart Public Transport & Digital Ticketing Platform
 
-BusPass is an Android public-transport companion app for passengers and conductors. It combines route discovery, journey booking, digital tickets, wallet recharge and passbook history with conductor-side passenger and live-location workflows.
+BusPass is a multi-role public-transport platform built around two connected experiences:
 
-## Product Scope
+- **Android App** — passenger and conductor workflows
+- **Admin Panel** — operational management and monitoring
 
-- Passenger sign-in, registration, profile and saved routes
-- Route and nearest-stop discovery with map support
-- Normal and group/other-passenger booking flows
-- QR ticket display and conductor-side validation
+> **Live Admin Panel:** https://buspassadmin.web.app/
+>
+> **Admin branch:** [`admin`](https://github.com/PritishMete/BusPass/tree/admin)
+
+## Repository Branches
+
+| Branch | Purpose |
+| --- | --- |
+| [`main`](https://github.com/PritishMete/BusPass/tree/main) | Android passenger + conductor application |
+| [`admin`](https://github.com/PritishMete/BusPass/tree/admin) | BusPass administrative web panel |
+
+## Android Application
+
+The `main` branch contains the native Android application used by passengers and conductors.
+
+### Passenger experience
+
+- Sign in, registration and profile management
+- Route and nearest-stop discovery
+- Map-based journey context
+- Individual and group/other-passenger booking
+- Digital ticket and QR presentation
 - Wallet balance, recharge and passbook history
-- Emergency notifications, issue reporting and referrals
-- Conductor route setup, live location and passenger list views
-- Optional SMS ticket fallback and UPI app hand-off
+- Live bus/journey visibility
+- Saved routes, referrals, issue reporting and emergency support
 
-## Technology
+### Conductor experience
 
-- Java Android application, namespace `com.pritish.smartbuss`
-- Android Gradle Plugin 8.10.1, compile SDK 34, minimum SDK 29
-- Firebase Authentication and Realtime Database
-- Google Maps/Places/Location, OSMDroid and route helpers
-- Retrofit/OkHttp, ZXing/JourneyApps QR scanning, Razorpay Checkout
-- Lottie, Material components, MPAndroidChart and supporting UI libraries
+- Route and journey setup
+- Active passenger lists
+- QR ticket scanning and validation
+- Live location broadcasting
+- Booking/journey operational views
 
-## Local Setup
+## Technology Stack
 
-1. Install Android Studio and a JDK supported by the installed Android Gradle Plugin.
-2. Obtain the project Firebase configuration from the project owner and place it at `app/google-services.json`. This file is intentionally ignored by Git.
-3. Add valid Google Maps/Places configuration through the Android resource/local release process. Do not commit API keys.
-4. Open the project in Android Studio or run `gradlew.bat :app:assembleDebug` from the repository root.
+### Mobile
+- Java
+- Android SDK
+- Material Components
+
+### Data & Authentication
+- Firebase Authentication
+- Firebase Realtime Database
+
+### Maps & Location
+- Google Maps
+- Google Places
+- Google Play Services Location
+- OSMDroid
+
+### Ticketing & Device Capabilities
+- ZXing / JourneyApps QR
+- NFC
+- Bluetooth
+
+### Payments & Networking
+- Razorpay Checkout
+- UPI application hand-off
+- Retrofit
+- OkHttp
+
+## System Overview
+
+```text
+                    BUSPASS PLATFORM
+                           │
+          ┌────────────────┴────────────────┐
+          │                                 │
+          ▼                                 ▼
+   Android Application                 Admin Panel
+ Passenger + Conductor                Web Operations
+          │                                 │
+          └───────────────┬─────────────────┘
+                          ▼
+              Firebase / Shared Data
+```
+
+The Android and administrative experiences operate on the same BusPass ecosystem while serving different users and workflows.
+
+## Admin Panel
+
+The administrative interface is maintained on the [`admin`](https://github.com/PritishMete/BusPass/tree/admin) branch.
+
+**Live deployment:** https://buspassadmin.web.app/
+
+The admin panel provides operational functionality such as dashboard views, bus and route management, bus-location monitoring, NFC assignment, passenger/report handling, messaging and administrative settings.
+
+## Android Local Setup
+
+1. Install Android Studio and a compatible JDK.
+2. Clone the repository and stay on the `main` branch.
+3. Obtain the project Firebase configuration from the project owner and place it at:
+
+```text
+app/google-services.json
+```
+
+4. Configure valid Google Maps/Places credentials through local/release configuration. Do not commit private API credentials.
+5. Sync Gradle and run the app from Android Studio, or build from Windows with:
+
+```bash
+gradlew.bat :app:assembleDebug
+```
 
 ## Verification
 
-The repository CI workflow runs:
+The Android project can be checked with:
 
-```text
+```bash
 gradlew.bat clean test lint assembleDebug
 ```
 
-CI requires the `GOOGLE_SERVICES_JSON_B64` secret. Payment, Firebase and map integrations also require valid project-side configuration and cannot be verified by an offline unit test alone.
+External integrations such as Firebase, maps and payments require valid project-side configuration and cannot be fully verified through offline unit tests alone.
 
 ## Security Notes
 
-- Firebase Realtime Database rules are an operational requirement and are not included in this client repository.
-- Razorpay payment verification must happen on a trusted server before treating a recharge as final.
-- The current phone-validation client points at an HTTP endpoint; production deployments should migrate that service to HTTPS.
-- Release builds should use restricted Google API keys, Play App Signing, and a backend-mediated payment flow.
+- Never commit `google-services.json` if it contains restricted project configuration not intended for source control.
+- Firebase Realtime Database rules must restrict access by authenticated role and ownership.
+- Razorpay payment verification should happen on a trusted server before a recharge is treated as final.
+- Production Google API keys should be restricted by application/package and API scope.
+- Service-account JSON/private keys must never be committed to Git.
 
-See [docs/PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md) for a concise project brief and [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md) for showcase-ready detail.
+## Related Documentation
+
+- [`docs/PROJECT_SUMMARY.md`](docs/PROJECT_SUMMARY.md)
+- [`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md)
+- [Admin branch](https://github.com/PritishMete/BusPass/tree/admin)
+- [Live Admin Panel](https://buspassadmin.web.app/)
+
+---
+
+**BusPass** combines mobile ticketing, QR validation, real-time location, wallet/payment workflows and administrative operations into one connected public-transport system.
